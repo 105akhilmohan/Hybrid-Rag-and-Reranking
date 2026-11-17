@@ -148,19 +148,7 @@ Hybrid-Rag-and-Reranking/
 
 ## Installation and Setup
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/105akhilmohan/Hybrid-Rag-and-Reranking.git
-```
-
-### 2. Navigate to the Project Directory
-
-```bash
-cd Hybrid-Rag-and-Reranking
-```
-
-### 3. Create a Virtual Environment
+### 1. Create a Virtual Environment
 
 ```bash
 python -m venv venv
@@ -180,13 +168,13 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 4. Install Dependencies
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 5. Install Tesseract OCR
+### 3. Install Tesseract OCR
 
 Install Tesseract OCR if you need to process scanned PDF documents.
 
@@ -196,7 +184,7 @@ https://github.com/tesseract-ocr/tesseract
 
 Make sure Tesseract is installed and accessible to your Python environment.
 
-### 6. Run the Application
+### 4. Run the Application
 
 ```bash
 python app.py
