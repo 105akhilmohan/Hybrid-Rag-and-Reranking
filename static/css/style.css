@@ -1,0 +1,152 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #202b43;
+}
+
+.sidebar {
+    position: fixed;
+    width: 240px;
+    height: 100vh;
+    background: #202b43;
+    color: white;
+    padding: 25px;
+}
+
+.sidebar h2 {
+    color: #91a3ff;
+}
+
+.sidebar p {
+    color: #aab4c8;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    margin-top: 30px;
+    background: #35415c;
+    border-radius: 8px;
+}
+
+.main-content {
+    margin-left: 240px;
+    padding: 35px;
+}
+
+header {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 25px;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.welcome p {
+    color: #758198;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+}
+
+input[type="file"] {
+    display: block;
+    margin: 20px 0;
+}
+
+textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 1px solid #dce1eb;
+    border-radius: 8px;
+    resize: vertical;
+}
+
+button {
+    background: #536df5;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #4056dc;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.document {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.document span {
+    float: right;
+    color: #16845b;
+}
+
+.answer-card {
+    border-left: 5px solid #536df5;
+}
+
+.passage {
+    background: #f7f8fc;
+    padding: 18px;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+
+.passage p {
+    line-height: 1.6;
+    color: #59657b;
+}
+
+.message {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 7px;
+}
+
+.message.success {
+    background: #e5f7ed;
+    color: #16744e;
+}
+
+.message.error {
+    background: #fff0ef;
+    color: #b83d37;
+}
+
+@media(max-width: 700px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 18px;
+    }
+}

@@ -1,0 +1,62 @@
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Hybrid RAG{% endblock %}
+
+{% block content %}
+
+<div class="welcome">
+    <h2>Welcome to your AI Study Assistant</h2>
+    <p>Upload your textbook and ask questions from its content.</p>
+</div>
+
+<div class="card">
+    <h2>Upload PDF Documents</h2>
+
+    <form action="{{ url_for('upload') }}"
+          method="POST"
+          enctype="multipart/form-data">
+
+        <input type="file"
+               name="pdf_files"
+               accept=".pdf"
+               multiple
+               required>
+
+        <button type="submit">Upload and Process PDF</button>
+    </form>
+</div>
+
+<div class="card">
+    <h2>Ask Your Question</h2>
+
+    <form action="{{ url_for('ask') }}" method="POST">
+
+        <textarea name="question"
+                  placeholder="Ask anything about your textbook..."
+                  required></textarea>
+
+        <button type="submit" {% if not indexed %}disabled{% endif %}>
+            Generate Answer
+        </button>
+    </form>
+
+    {% if not indexed %}
+        <p>Upload a PDF and build the index first.</p>
+    {% endif %}
+</div>
+
+{% if documents %}
+<div class="card">
+    <h2>Uploaded Documents</h2>
+
+    {% for document in documents %}
+        <div class="document">
+            📄 {{ document.name }}
+            <span>{{ document.chunks }} chunks</span>
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

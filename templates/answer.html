@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+
+{% block title %}Generated Answer{% endblock %}
+
+{% block heading %}Your AI Answer{% endblock %}
+
+{% block content %}
+
+<div class="card">
+    <h3>Your Question</h3>
+    <p>{{ question }}</p>
+</div>
+
+<div class="card answer-card">
+    <h2>Generated Answer</h2>
+     {{ answer | safe }}
+</div>
+
+<div class="card">
+    <h2>Retrieved Supporting Passages</h2>
+
+    {% for chunk in chunks %}
+
+    <div class="passage">
+        <h4>{{ chunk.source }}</h4>
+
+        <p>Page: {{ chunk.page }}</p>
+
+        <p>{{ chunk.text }}</p>
+
+        <p>
+            Reranking Score:
+            {{ "%.4f"|format(chunk.rerank_score) }}
+        </p>
+    </div>
+
+    {% endfor %}
+</div>
+
+<a href="{{ url_for('home') }}">Ask Another Question</a>
+
+{% endblock %}
